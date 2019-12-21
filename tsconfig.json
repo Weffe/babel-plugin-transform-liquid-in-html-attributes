@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "checkJs": false,
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "lib": ["esnext", "dom"],
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "downlevelIteration": true,
+        "outDir": "lib",
+        "declaration": true,
+        "declarationDir": "lib",
+        "skipLibCheck": true,
+        "incremental": true
+    },
+    "include": ["src/**/*"]
+}

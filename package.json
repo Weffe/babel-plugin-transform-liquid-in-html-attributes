@@ -1,0 +1,58 @@
+{
+    "name": "babel-plugin-transform-liquid-in-template-literals",
+    "version": "0.0.0",
+    "description": "Transform liquid filters in template literals to work properly",
+    "main": "lib/plugin.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "test": "jest",
+        "prebuild": "rimraf lib",
+        "build": "tsc",
+        "prettier": "prettier --write '{test,src}/**/*.js'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Weffe/babel-plugin-transform-liquid-in-template-literals.git"
+    },
+    "keywords": [
+        "babel",
+        "liquid",
+        "template",
+        "literal"
+    ],
+    "author": "Weffe",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Weffe/babel-plugin-transform-liquid-in-template-literals/issues"
+    },
+    "homepage": "https://github.com/Weffe/babel-plugin-transform-liquid-in-template-literals#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.7.7",
+        "@babel/core": "^7.7.7",
+        "@babel/preset-env": "^7.7.7",
+        "@babel/preset-typescript": "^7.7.7",
+        "@babel/traverse": "^7.7.4",
+        "@babel/types": "^7.7.4",
+        "@types/babel__traverse": "^7.0.8",
+        "@types/jest": "^24.0.24",
+        "@types/node": "^12.12.21",
+        "babel-jest": "^24.9.0",
+        "babel-plugin-tester": "^8.0.1",
+        "jest": "^24.9.0",
+        "prettier": "^1.19.1",
+        "rimraf": "^3.0.0",
+        "typescript": "^3.7.4"
+    },
+    "prettier": {
+        "printWidth": 130,
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleQuote": true,
+        "arrowParens": "always",
+        "endOfLine": "lf"
+    }
+}
