@@ -1,32 +1,37 @@
 import * as t from '@babel/types';
 import { VisitNodeFunction } from '@babel/traverse';
+import { containsLiquid, getDoubleQuoteMatches } from './utils';
 
-export const transform: VisitNodeFunction<any, t.TaggedTemplateExpression> = (path) => {
+export const transform: VisitNodeFunction<any, t.TemplateLiteral> = (path) => {
     const { node } = path;
-    const { quasi } = node;
+    const { quasis } = node;
 
-    // const strings = [];
-    // const raws = [];
+    for (const elem of quasis) {
+        const { value } = elem;
 
-    // // Flag variable to check if contents of strings and raw are equal
-    // let isStringsRawEqual = true;
+        if (value.raw.length) {
+            let resultStr = value.raw;
+            const matches = getDoubleQuoteMatches(value.raw);
 
-    // for (const elem of quasi.quasis) {
-    //     const { raw, cooked } = elem.value;
-    //     const value = cooked == null ? path.scope.buildUndefinedNode() : t.stringLiteral(cooked);
+            if (matches) {
+                let shouldBeReplace = false;
 
-    //     strings.push(value);
-    //     raws.push(t.stringLiteral(raw));
+                matches.forEach((match) => {
+                    if (containsLiquid(match)) {
+                        const doubleToNothing = match.replace(/\"/g, '');
+                        const singleToDouble = doubleToNothing.replace(/\'/g, `"`);
+                        const transformedStr = `'${singleToDouble}'`;
 
-    //     if (raw !== cooked) {
-    //         // false even if one of raw and cooked are not equal
-    //         isStringsRawEqual = false;
-    //     }
-    // }
+                        shouldBeReplace = true;
+                        resultStr = resultStr.replace(match, transformedStr);
+                    }
+                });
 
-    const f = t.templateElement({ raw: 'test', cooked: 'test' }, true);
-
-    const x = t.templateLiteral([f], []);
-
-    path.replaceWith(x);
+                // prevent unneccessary replacements
+                if (shouldBeReplace) {
+                    value.raw = resultStr;
+                }
+            }
+        }
+    }
 };

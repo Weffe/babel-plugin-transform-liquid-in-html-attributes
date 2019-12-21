@@ -5,7 +5,7 @@ export default function(): PluginObj {
     return {
         name: 'transform-liquid-in-template-literals',
         visitor: {
-            TaggedTemplateExpression: transform,
+            TemplateLiteral: transform,
         },
     };
 }
