@@ -1,1 +1,1 @@
-var x = `<img src='{{ "affirm_logo_black.svg" | asset_url }}' class="affirmLogo" />`;
+var x = `"{% '123' | times: 2 %}"`;
