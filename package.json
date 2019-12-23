@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "description": "Transform liquid filters in template literals to work properly",
     "main": "lib/plugin.js",
+    "types": "lib/plugin.d.ts",
     "files": [
         "lib"
     ],
