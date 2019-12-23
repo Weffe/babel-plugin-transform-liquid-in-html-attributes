@@ -5,7 +5,9 @@
     "main": "lib/plugin.js",
     "types": "lib/plugin.d.ts",
     "files": [
-        "lib"
+        "lib",
+        "README.md",
+        "LICENSE"
     ],
     "scripts": {
         "test": "jest",
