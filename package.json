@@ -29,7 +29,9 @@
         "url": "https://github.com/Weffe/babel-plugin-transform-liquid-in-template-literals/issues"
     },
     "homepage": "https://github.com/Weffe/babel-plugin-transform-liquid-in-template-literals#readme",
-    "dependencies": {},
+    "dependencies": {
+        "tiny-warning": "^1.0.3"
+    },
     "devDependencies": {
         "@babel/cli": "^7.7.7",
         "@babel/core": "^7.7.7",
