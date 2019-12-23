@@ -10,8 +10,7 @@
         "test": "jest",
         "prebuild": "rimraf lib",
         "build": "tsc",
-        "prettier": "prettier --write '{src,test}/**/*.{js,ts}'",
-        "r": "rimraf node_modules"
+        "prettier": "prettier --write '{src,test}/**/*.{js,ts}'"
     },
     "repository": {
         "type": "git",
