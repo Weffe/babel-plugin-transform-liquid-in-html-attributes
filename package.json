@@ -1,6 +1,6 @@
 {
     "name": "babel-plugin-transform-liquid-in-template-literals",
-    "version": "0.0.0",
+    "version": "0.0.1-alpha.0",
     "description": "Transform liquid filters in template literals to work properly",
     "main": "lib/plugin.js",
     "types": "lib/plugin.d.ts",
